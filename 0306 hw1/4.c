@@ -8,8 +8,8 @@ output : cba321
 
 void anti_string(char str[]) {
     int start = 0;
-    int end = strlen(str) -1 ;  // -1是因為str[0]會對應到第一個字 所以長度為6時=str[5] 中間差1
-    for ( ; start <= end ; start += 1, end -= 1) {   // >=很重要 沒=的話偶數個字母不會換
+    int end = strlen(str) -1 ;  // -1是因為長度為6時=str[5] 中間差1
+    for ( ; start <= end ; start += 1, end -= 1) {   //沒=的話偶數個字母不會換
         char letter = str[start];
         str[start] = str[end];
         str[end] = letter ;
