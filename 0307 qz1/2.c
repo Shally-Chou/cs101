@@ -17,12 +17,11 @@ int main()
     int len = strlen(str) ;
     int j = len - 1 ;
     int total = 0 ;
-    int ans ;
     
     for(int i = 0 ; i < len ; i++ ) {
         int num = str[i] - '0' ;
         if(j >= 0) {
-            ans = num* (pow(10,j)) ;
+            int ans = num* (pow(10,j)) ;
             total += ans ;
         }
         j-- ;
