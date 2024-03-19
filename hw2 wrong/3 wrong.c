@@ -4,7 +4,7 @@
 int main()
 {
     FILE* fp_in , *fp_out ;
-    fp_in = fopen("main.c" , "r") ;
+    fp_in = fopen("main.c" , "r") ; //改成main3.c就會過
     char line[1000] ;
     int found_main = 0 ;
     int line_number = 1 ;
