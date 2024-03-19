@@ -8,34 +8,34 @@ int main()
     scanf("%d", &N) ;
     srand((unsigned)time(NULL)) ;
     int num ;
-    int repeat , rewrite = 0 ;
+    FILE* fp = fopen("lotto.txt" , "w+") ;
     
     for(int i = 1 ; i <= N ; i++){
-        printf("[%d]: " , i) ;
+        fprintf(fp , "[%d]: " , i) ;
         for(int j = 0 ; j < 7 ; j++){
             num = (rand()%69) + 1 ;
             if(num < 10) {
-            printf("0%d ", num);
+            fprintf(fp , "0%d ", num);
             }
             else {
-                printf("%d ", num);
+                fprintf(fp , "%d ", num);
             }
-            repeat = num ;
-            num = rewrite ;
+            num = 0 ;
         }
-        printf("\n") ;
+        fprintf(fp , "\n") ;
     }
     
     if(N != 5){
         for( ; N < 5 ; ){
             N += 1 ;
-            printf("[%d]: " , N) ;
+            fprintf(fp , "[%d]: " , N) ;
             for(int a = 0 ; a < 7 ; a++){
-                printf("__ ") ;
+                fprintf(fp , "__ ") ;
             }
-            printf("\n") ;
+            fprintf(fp , "\n") ;
         }
     }
+    fclose(fp) ;
 
     return 0;
 }
