@@ -9,7 +9,7 @@ int main()
     int found_main = 0 ;
     int line_number = 1 ;
     
-    fp_out = fopen("main2.txt", "w+");
+    fp_out = fopen("main3.txt", "w+");
     for (;;) {
         if (fgets(line, sizeof(line), fp_in) == NULL)
             break;
