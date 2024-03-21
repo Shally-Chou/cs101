@@ -24,7 +24,7 @@ int main()
             } 
 
             if(num < 10) {
-            fprintf(fp , "0%d ", num);
+                fprintf(fp , "0%d ", num);
             }
             else {
                 fprintf(fp , "%d ", num);
