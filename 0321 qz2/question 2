@@ -1,1 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
 
+int main() {
+    FILE *inFile, *outFile;
+    char c;
+    int count = 0;
+
+    // 開啟讀取檔案
+    inFile = fopen("main.c", "r");
+    if (inFile == NULL) {
+        printf("Failed to open file main.c\n");
+        return 1;
+    }
+
+    // 計算英文字元數
+    while ((c = fgetc(inFile)) != EOF) {
+        if (isalpha(c)) {
+            count++;
+        }
+    }
+
+    // 關閉讀取檔案
+    fclose(inFile);
+
+    // 開啟寫入檔案
+    outFile = fopen("main.txt", "w");
+    if (outFile == NULL) {
+        printf("Failed to open file main.txt\n");
+        return 1;
+    }
+
+    // 將英文字元數寫入檔案
+    fprintf(outFile, "%d", count);
+
+    // 關閉寫入檔案
+    fclose(outFile);
+
+    return 0;
+}
