@@ -3,7 +3,7 @@
 int multi(int i, int j) {
     printf("%d*%d=%d", i, j, i * j);
     if (j < 9) {
-        printf(" ");
+        printf(" ");  //最後面不能有空格 很重要
         multi(i, j + 1);
     } 
     else {
