@@ -22,7 +22,7 @@ public:
     }
 
     void printBoard() {
-        int count = 1;
+        int count = 1;                   //錯在最右邊設了邊界 其他都是對的 看不懂就兩個都跑一遍就看的出來了
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {
