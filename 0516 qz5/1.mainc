@@ -1,1 +1,44 @@
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+class Clock {
+protected:
+   int hour, minute, second;
+   string ampm;
+
+public:
+   Clock(int h, int m, int s, string ap) {
+       hour = h;
+       minute = m;
+       second = s;
+       ampm = ap;
+   }
+
+   virtual void display() {
+       cout << "Clock = " << hour << ":" << minute << ":" << second << " " << ampm << endl;
+   }
+};
+
+class HMSClock : public Clock {
+public:
+   HMSClock(int h, int m, int s, string ap) : Clock(h, m, s, ap) {
+       if (ap == "PM" && h != 12)
+           hour += 12;
+       else if (ap == "AM" && h == 12)
+           hour = 0;
+   }
+
+   void display() {
+       cout << "HMSClock = " << hour << "h:" << minute << "m:" << second << "s" << endl;
+   }
+};
+
+int main() {
+   Clock cc(10, 25, 43, "AM");
+   HMSClock hmsc(10, 25, 43, "PM");
+   cc.display();
+   hmsc.display();
+   return 0;
+}
