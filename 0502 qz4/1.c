@@ -1,7 +1,8 @@
 /******************************************************************************
 使用 calloc 和 free 複製一個 string
 輸出經過clone_string() 複製後的字元
-output : The cloned string: (這裡就scanf的值)
+intput : sc is freaking hard
+output : The cloned string: sc is freaking hard
 *******************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
